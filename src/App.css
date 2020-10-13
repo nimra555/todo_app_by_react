@@ -11,13 +11,14 @@
   min-height: 500px;
   width: 50%;
   margin: 5% auto;
-  box-shadow: 2px 2px 10px 14px gray;
+  box-shadow: 2px 2px 30px 5px rgb(164, 231, 228);
+  background: #009688;
 }
 #input_text{
   border: 1px solid blue;
   padding: 5px 20px;
   background: transparent;
-  border-radius: 5px 40px;
+  border-radius: 5px;
   outline: none;
 }
 .add{
@@ -28,12 +29,21 @@
   cursor: pointer;
   outline: none;
   text-transform: uppercase;
+  margin:5px ;
 }
 .add:hover{
   border:2px solid blue;
   color: blue;
   background: black;
 }
+.list-container{
+  background: gray;
+  text-align: center;
+  margin-right: 45px;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+}
+
 li{
   list-style: none;
   display: inline-block;

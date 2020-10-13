@@ -18,14 +18,16 @@ function App() {
           event.preventDefault();
           settudoList([...tudoList,addTudo]);
         }} className="add">Add</button>
+        <button onClick={(event)=>{
+          settudoList(event.target.reset())}} className="add">remove all</button>
       </form>
       <ul>
         {tudoList.map((listItem, index) => {
           return (
-            <div key={index}>
+            <div key={index} className="list-container">
 
               <li>{listItem}</li>
-              <button onClick={()=>{settudoList(tudoList.splice(0,tudoList.length - 1))}} className="remove">Remove</button>
+              <button onClick={()=>{settudoList(tudoList.splice(0,tudoList.length - 1))}} className="remove"><i class="fas fa-trash-alt"></i></button>
             </div>
             )
         })}
