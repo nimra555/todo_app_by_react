@@ -2,39 +2,52 @@ import React, { useState } from 'react';
 import './App.css';
 
 function App() {
-  let [tudoList, settudoList] = useState([]);
-  let [addTudo, setAddtudo] = useState("");
+  let [todoList, settodoList] = useState([]);
+  let [addTodo, setAddtodo] = useState("");
 
-  return (
-    <div className="wrapper">
-      <h2>Tudo App</h2>
+  const handleChange = (e) => {
+    setAddtodo(e.target.value)
+  }
+
+  const addList = (e) => {
+    e.preventDefault();
+    settodoList([...todoList, addTodo]);
+    setAddtodo("");
+  }
+
+  const deleteItem = () => {
+  settodoList(todoList.splice(0, todoList.length - 1));
+  }
+
+return (
+  <div className="wrapper">
+      <h1>ToDo App</h1>
+    <div className="center">
       <form>
         <label htmlFor="input_text">
-          <input type="text" placeholder="Enter Item"  onChange={(event) =>  setAddtudo(event.target.value)} id="input_text" />
+          <input type="text" placeholder="Enter Item" value={addTodo} onChange={handleChange} id="input_text" />
         </label>
-        <br></br>
-        <br></br>
-        <button onClick={(event) => {
-          event.preventDefault();
-          settudoList([...tudoList,addTudo]);
-        }} className="add">Add</button>
-        <button onClick={(event)=>{
-          settudoList(event.target.reset())}} className="add">remove all</button>
-      </form>
-      <ul>
-        {tudoList.map((listItem, index) => {
-          return (
-            <div key={index} className="list-container">
-
-              <li>{listItem}</li>
-              <button onClick={()=>{settudoList(tudoList.splice(0,tudoList.length - 1))}} className="remove"><i class="fas fa-trash-alt"></i></button>
-            </div>
+        <button onClick={addList} className="add">+</button>
+        </form>
+        <table>
+          {todoList.map((listItem, index) => {
+            return (
+              <div key={index} className="list-container">
+               
+               
+                  <tr>
+                    <td>{listItem}</td>
+                    <td> <button onClick={deleteItem} className="remove"><i className="fas fa-trash-alt"></i></button></td>
+                  </tr>
+              </div>
             )
-        })}
-      </ul>
+          })}
+        </table>
     </div>
-  );
-}
+  </div>
+)
+}        
+
 
 export default App;
 

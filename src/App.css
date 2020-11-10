@@ -1,59 +1,165 @@
 *{
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  --darkMagneta-color:darkmagenta;
+  --white-color: rgb(243, 242, 239);
 }
 .wrapper{
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border:5px solid black;
-  min-height: 500px;
-  width: 50%;
-  margin: 5% auto;
-  box-shadow: 2px 2px 30px 5px rgb(164, 231, 228);
-  background: #009688;
+  width: 35%;
+  margin: 50px auto;
+  background: var(--white-color);
+  box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.5);
 }
-#input_text{
-  border: 1px solid blue;
-  padding: 5px 20px;
-  background: transparent;
+.center form{
+    border-radius: 5px;
+    margin: auto;
+    padding: 10px 0px; 
+    display: flex; 
+    justify-content: center;
+     align-items: center;
+}
+h1{
+    color:var(--white-color);
+    background-color: var(--darkMagneta-color);
+    padding: 10px;
+    text-align: center;
+    font-size: 40px;
+    margin: 20px auto;
+    text-transform: uppercase;
+    margin-top: 0px;
+}
+input{
+  height: 32px;
   border-radius: 5px;
+  border: 1px solid var(--darkMagneta-color);
   outline: none;
+  margin: auto;
+  padding: 5px;
+}
+input:focus{
+  background: var(--white-color);
 }
 .add{
-  background: transparent;
-  border:2px solid blue;
-  font-weight: bold;
-  padding: 5px 35px;
+  align-self: center;
+  width: 40px;
+  font-size: 25px;
+  margin: 20px;
   cursor: pointer;
+  color: var(--darkMagneta-color);
+  font-weight: bold;
+  background: transparent;
+  border: 1px solid var(--darkMagneta-color);
   outline: none;
-  text-transform: uppercase;
-  margin:5px ;
+  border-radius: 5px;
 }
 .add:hover{
-  border:2px solid blue;
-  color: blue;
-  background: black;
+  background:var(--darkMagneta-color);
+  color: var(--white-color);
 }
 .list-container{
-  background: gray;
-  text-align: center;
-  margin-right: 45px;
-  padding: 5px 10px;
-  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-li{
-  list-style: none;
-  display: inline-block;
-  margin: 10px;
+table{
+  display: block;
+}
+tr{
+  display: flex;
+  justify-content: space-between;
+    align-items: center;
+    background: #92a3ab;
+    padding: 10px;
+    width: 200px;
+    margin-bottom: 5px;
 }
 .remove{
-  background: transparent;
-  border:2px solid blue;
-  font-weight: bold;
-  padding: 5px 10px;
+  align-self: center;
   cursor: pointer;
+  color: var(--darkMagneta-color);
+  font-weight: bold;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+}
+@media screen and (max-width: 800px){
+  .wrapper{
+    width: 45%;
+    margin: 50px auto;
+   
+    border: 1px solid rgb(32, 32, 32);
+  }
+  h1{
+    margin-top: 0px;
+  }
+  .center form{
+    border-radius: 5px;
+    margin: auto;
+    padding: 10px 0px; 
+    display: flex; 
+    justify-content: center;
+     align-items: center;
+}
+input{
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid var(--darkMagneta-color);
   outline: none;
+  margin-left: 5px;
+  padding: 5px;
+  width: 100%;
+}
+  .remove{
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 450px){
+  .wrapper{
+    
+    width: 55%;
+    margin: 50px auto;
+     border: 1px solid rgb(32, 32, 32);
+     box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.3);
+  }
+  h1{
+      color: var(--white-color);
+      background-color:var(--darkMagneta-color);
+      padding: 10px;
+      text-align: center;
+      font-size: 20px;
+      margin-top: 0px;
+      text-transform: uppercase;
+  }
+  .center form{
+    border-radius: 5px;
+    margin: auto;
+    padding: 10px 0px; 
+    display: flex; 
+    justify-content: center;
+     align-items: center;
+}
+input{
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid var(--darkMagneta-color);
+  outline: none;
+  margin-left: 5px;
+  padding: 5px;
+  width: 100%;
+}
+
+.add{
+    width: 50px;
+    font-size: 25px;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+    color: var(--darkMagneta-color);
+    font-weight: bold;
+}
+.remove{ 
+    cursor: pointer;
+}
 }
