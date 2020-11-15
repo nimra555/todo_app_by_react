@@ -11,6 +11,7 @@ function App() {
 
   const addList = (e) => {
     e.preventDefault();
+    if(addTodo === ""){return alert("Input value must be filled")}
     settodoList([...todoList, addTodo]);
     setAddtodo("");
   }
@@ -33,8 +34,6 @@ return (
           {todoList.map((listItem, index) => {
             return (
               <div key={index} className="list-container">
-               
-               
                   <tr>
                     <td>{listItem}</td>
                     <td> <button onClick={deleteItem} className="remove"><i className="fas fa-trash-alt"></i></button></td>
@@ -46,7 +45,7 @@ return (
     </div>
   </div>
 )
-}        
+}      
 
 
 export default App;
